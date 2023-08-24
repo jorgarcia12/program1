@@ -47,9 +47,3 @@ else:
         print("El ingreso esperado para este ciclo sera de: $",ingreso_total)
     else:
         print("Disfrute su clase")
-
-
-
-
-
-

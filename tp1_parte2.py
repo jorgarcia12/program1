@@ -82,7 +82,14 @@ print("su total fue de $",total, "descontando el 15%, usted debe pagar $",fin)
 #•	    55% del promedio de sus tres calificaciones parciales.
 #•	    30% de la calificación del examen final.
 #•	    15% de la calificación de un trabajo final.
-
+n1 = int(input("Ingrese la nota 1 "))
+n2 = int(input("Ingrese la nota 2 "))
+n3 = int(input("Ingrese la nota 3 "))
+examen_final = int(input("Ingrese la nota del final "))
+tp_final = int(input("ingrese la nota del trabajo final "))
+promedio_examenes = (n1+n2+n3)/3
+nota_final = promedio_examenes* 0.55 + examen_final*0.3 + tp_final*0.15
+print("su nota final es: ",nota_final)
 #11.	Pide al usuario dos números y muestra la “distancia” entre ellos (el valor absoluto de su diferencia, de modo que el resultado sea siempre positivo).
 num1= int(input("ingrese el primer numero "))
 num2= int(input("ingrese el segundo numero "))
@@ -98,7 +105,7 @@ print("la raiz cuadrada de ",num," es: ",rcuad," y la raiz cubica es:",rcub)
 
 #13.	Dado un número de dos cifras, diseñe un algoritmo que permita obtener el número invertido. Ejemplo, si se introduce 23 que muestre 32.
 num = input("Ingrese un numero para verlo dado vuelta")
-num = print([-1])
+num = print(num[::-1])
 #14.	Dadas dos variables numéricas A y B, que el usuario debe teclear, se pide realizar un algoritmo que intercambie los valores de ambas variables y muestre cuanto valen al final las dos variables.
 
 num1 = str(input("iingrese un numero para la primer variable"))
