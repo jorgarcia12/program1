@@ -1,6 +1,6 @@
 fecha = input("ingrese la fecha en formato dia, DD/MM: ")
 dia = fecha[0:fecha.find(",")]
-DD = fecha[fecha.find(" ")+1: fecha.find("/")]
+DD = fecha[fecha.find(" ")+1: fecha.find("/")] 
 MM = fecha[fecha.find("/")+1:]
 dia = dia.lower()
 #print(fecha,dia,DD,MM)
