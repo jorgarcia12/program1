@@ -1,4 +1,8 @@
-height = int(input("Ingrese la altura del triangulo en numero: "))
-for i in range(height+1):
-    for j in range(i):
-        print(j)
+first = int(input("Introduzca el primer numero: "))
+second = int(input("Introduzca el segundo numero: "))
+for i in range(first,second + 1):
+    if (i % 2 == 0):
+        print(f"{i} es par")
+    else:
+        print(f"{i} es impar")
+
