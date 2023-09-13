@@ -1,7 +1,5 @@
-how_many = int(input("Ingrese cuantos numeros va a ingresar: "))
-count= 0
-for i in range(how_many):
-    number = int(input("Ingrese un numero: "))
-    if number < 0:
-        count = count + 1
-print(f"Usted ingreso {count} numeros negativos")
+exit = 0
+print("Ingrese la cantidad de lineas que quiera para verlas en mayusculas, pulse 0 para salir: ")
+while exit == 0:
+    word = input("Ingrese una las lineas: ").upper
+    print(word)

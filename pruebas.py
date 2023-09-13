@@ -1,8 +1,7 @@
-first = int(input("Introduzca el primer numero: "))
-second = int(input("Introduzca el segundo numero: "))
-for i in range(first,second + 1):
-    if (i % 2 == 0):
-        print(f"{i} es par")
-    else:
-        print(f"{i} es impar")
+word = 0
+print("Ingrese 5 lineas que quiera para verlas en mayusculas, pulse 0 para convertirlas: ")
+while word == 0:
+    word = input(str("Ingrese palabras para convertirlas en mayusculas:  "))
+    exit = input ("Desea continuar? no=1 si=0  ")
+    print(word).upper
 
