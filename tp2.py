@@ -201,10 +201,12 @@ elif op == "r":
 elif op == "m":
     print(f"la multiplicacion entre los dos numeros es: {a * b}")
 elif op == "d":
-    print(f"la division entre los dos numeros es: {a / b}")
+    if (b==0):
+        print("El divisor no puede ser cero")
+    else:
+        print(f"la division entre los dos numeros es: {a / b}")
 else:
     print("ingrese una operacion valida")
-
 
 #17-	Requerir al usuario que ingrese un día de la semana e imprimir un mensaje si es lunes, otro mensaje diferente si es viernes, otro mensaje diferente si es sábado o domingo. Si el día ingresado no es ninguno de esos, imprimir otro mensaje.
 

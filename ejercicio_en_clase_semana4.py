@@ -73,15 +73,32 @@ print("el nuevo mensaje es", m5)
 
 #Crear un programa que solicite el ingreso de números enteros positivos, hasta que el usuario ingrese el 0. Por cada número, informar cuántos dígitos pares y cuántos impares tiene. Al finalizar, informar la cantidad de dígitos pares y de dígitos impares leídos en total.
 
-n = int(input("Ingrese un numero para saber si sus digitos son pares o impares: "))
-pares = 0
-impares= 0
-while n > 0:
-    n = n // 10
-    if n % 2 == 0:
-        pares = pares + 1
-    else: 
-        impares = impares + 1
+num = 4
+contador_pares = 0
+contador_impares = 0
+contador_total_pares = 0
+contador_total_impares = 0
+while num != 0:
+    num = int(input("Ingrese un entero positivo para seguir ingresando o 0 para finalizar: "))
+    while True:
+        if (num > 10):
+            digito = num % 10
+        else:
+            digito = num
+        if (digito % 2 == 0):
+            contador_pares += 1
+        else:
+            contador_impares += 1
+        if (num > 10):
+            num = int(num / 10)
+        else:
+            break
+    
+    contador_total_pares = contador_total_pares + contador_pares
+    contador_total_impares = contador_total_impares + contador_impares
+    
+    print(f"El numero tiene {contador_pares} digito/s par/es, y {contador_impares} digito/s impar/es")
+    contador_pares = 0
+    contador_impares = 0
 
-
-print(f"el numero tiene {pares} digitos pares y {impares} digitos impares")
+print(f"La cantidad de digito/s par/es leidos en total fue {contador_total_pares} y impar/es {contador_total_impares}")

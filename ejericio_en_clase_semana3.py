@@ -7,8 +7,6 @@ dia = dia.lower()
 DD = int(DD)
 MM = int(MM)
 
-
-
 if (dia != "lunes" and dia != "martes" and dia != "miercoles" and dia != "jueves" and dia != "viernes" or DD < 1 or DD > 31 or MM < 1 or MM > 12):
     print("Datos invalidos, Ingrese nuevamente los datos")
 
@@ -20,8 +18,10 @@ elif(dia == "miercoles"):
     print("Examen nivel Avanzado")
 elif(dia == "jueves"):
     print("Practica hablada")
-else:
+elif(dia == "viernes"):
     print("Ingles para viajeros")
+else:
+    print("fecha invalida, ingrese nuevamente")
 
 if(dia == "lunes" or dia == "martes" or dia =="miercoles"):
     examen = input("¿Rindieron examnen? (INGRESE S(si) O N(no)): ")
@@ -38,12 +38,14 @@ elif(dia == "jueves"):
         print("Asistio la mayoria")
     else:
         print("No asistio la mayoria")
-else:
-    if (DD==1 and MM==1) or (DD==1 and MM==7):
+elif(dia == "viernes"):
+        print("Disfrute su clase")
+elif ((dia == "viernes") and (DD==1 and MM==1) or (dia == "viernes") (DD==1 and MM==7)):
         print("Comienzo nuevo Ciclo")
         cant_alumnos = int(input("Ingrese la cantidad de alumnos: "))
         arancel = int(input("Ingrese el arancel por alumno: $"))
         ingreso_total = (cant_alumnos*arancel) * 6
         print("El ingreso esperado para este ciclo sera de: $",ingreso_total)
-    else:
-        print("Disfrute su clase")
+else:
+    print("Datos invalidos")
+        
