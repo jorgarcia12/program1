@@ -1,4 +1,5 @@
 import random
+import math
 #ejercicio funciones
 
 def digit_summary(number):
@@ -74,3 +75,85 @@ def validation_letter():
         else:
             pass
     return letter
+
+#TP 5
+# ejercicio_1
+
+def dni(dni):
+    if len(dni)<=8 and len(dni)>=7:
+        return True
+    else:
+        return False
+
+# ejercicio_2
+
+def last_word_len(phrase):
+    words = phrase.split()
+
+    last_word = words[-1]
+    last_word_length = len(last_word)
+    return last_word_length
+
+#ejercicio_3
+
+#ejercicio_4
+
+def multiplos(a,b):
+    if (a%b==0):
+        return print(f"{a} es multiplo de {b}")
+
+#ejercicio_5
+
+def temperature(min,max,avg):
+    avg = (min + max) / 2
+    return avg
+
+#ejercicio_6
+
+def split(a):
+    a = " ".join(a)
+    return a
+#ejercicio_7
+
+#ejercicio_8
+
+def circle(radius):
+    p = (2*math.pi) * radius
+    a = math.pi * (radius*radius)
+    return p,a
+
+#ejercicio_9
+
+
+
+#ejercicio_13
+def vector_length(vector):
+    return len(vector)
+
+#ejercicio_14
+
+def prime_number(num):
+    if num <= 1:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+#ejercicio_15
+
+def factorial(num):
+    resultado = 1
+    for i in range(1, num + 1):
+        resultado *= i
+    return resultado
+
+#ejercicio_16
+
+def appareances(num,num_to_find,c):
+    num=str(num)
+    
+    for i in range(len(num)):
+        if (num[i]==num_to_find):
+            c = c + 1
+    return c
