@@ -1,3 +1,5 @@
+import math
+import random
 # ejercicio_1
 
 def dni(dni):
@@ -34,7 +36,9 @@ def identifier(name, dni):
 
 def multiplos(a,b):
     if (a%b==0):
-        return print(f"{a} es multiplo de {b}")
+        return True
+    else:
+        False
 
 #ejercicio_5
 
@@ -66,8 +70,8 @@ def max_min(number_list):
 #ejercicio_8
 
 def circle(radius):
-    p = (2*math.pi) * radius
-    a = math.pi * (radius*radius)
+    p = (2*3.14) * radius
+    a = 3.14 * (radius*radius)
     return p,a
 
 #ejercicio_9
@@ -135,3 +139,12 @@ def appareances(num,num_to_find,c):
         if (num[i]==num_to_find):
             c = c + 1
     return c
+
+#ejercicio_17
+
+def digit_summary(number):
+    number = str(number)
+    addition = 0
+    for i in number:
+        addition = addition + int(i)
+    return addition

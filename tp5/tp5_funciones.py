@@ -31,13 +31,11 @@ while True:
 #4.	Crea un programa que pida dos número enteros al usuario y diga si alguno de ellos es múltiplo del otro. Crea una función que reciba los dos números, y devuelve si el primero es múltiplo del segundo.
 n1 = int(input("Ingrese un numero: "))
 n2 = int(input("Ingrese un numero: "))
-if (n1%n2==0):
+if (funciones_tp5.multiplos(n1,n2)):
     print(f"{n1} es multiplo de {n2}")
-elif (n2%n1):
-    print(f"{n2} es multiplo de {n1}")
 else:
     print("Ningun numero es multiplo del otro")
-print(funciones_tp5.multiplos(n1,n2))
+
 
 #5.	Crear una función que calcule la temperatura media de un día a partir de la temperatura máxima y mínima. Crear un programa principal, que utilizando la función anterior, vaya pidiendo la temperatura máxima y mínima de cada día y vaya mostrando la media. El programa pedirá el número de días que se van a introducir.
 avg = 0
@@ -154,8 +152,7 @@ while True:
         digit_addition = funciones_tp5.digit_summary(number)
         print(f"La suma de los digitos del numero {number} es {digit_addition}")
         digit = int(input("Ingrese un digito para saber cuantas veces aparece en el numero: "))
-        appareances = funciones_tp5.appareances(number,digit,counter)
-        print(f"La cantidad de veces que aparece {digit} en {number} es {appareances}")
+        print(f"El numero {num_to_find} aparece {funciones_tp5.appareances(num,num_to_find,counter)} veces en el numero: {num}")
     else:
         break
 factorial_eldest_number = funciones_tp5.factorial(eldest_number)
