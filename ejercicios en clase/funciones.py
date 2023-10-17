@@ -76,3 +76,14 @@ def validation_letter():
             pass
     return letter
 
+# EJERCICIO 2 - VARIABLES DIMENSIONADAS
+
+def home(buy_list):
+    home_list = []
+    for i in buy_list:
+        if (i[3] not in home_list):
+            home_list.append(i[3])
+        else:
+            pass
+    return home_list
+
