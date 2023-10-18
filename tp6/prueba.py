@@ -9,7 +9,5 @@ kilos = int(input("Ingrese cuantos kilos va a llevar: "))
 if fruit_selection in fruits_table:
     value = fruits_table[fruit_selection]
     total_price = value * kilos
-else:
-    print("la fruta ingresada no se encuentra disponible")
 
 print(f"Usted llevo {kilos} kilos de {fruit_selection}, su total es de ${total_price}")
