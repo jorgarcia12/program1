@@ -1,11 +1,14 @@
 import funciones_tp7
 
-strings_list = []
+
+numbers_list = []
 while True:
-    string = input("Ingrese una palabra para meterla en la lista, o ingrese 'x' para terminar: ")
-    if string == 'x':
+    number = int(input("Ingrese un numero para agregarlo a la lista o ingrese '0' para terminar: " ))
+    if number==0:
         break
     else:
-        strings_list.append(string)
-funciones_tp7.insertion_sort(strings_list)
-print(strings_list)
+        numbers_list.append(number)
+
+print(f"La lista original es: {numbers_list}")
+funciones_tp7.bubble_sort_reverse(numbers_list)
+print(f"La lista ordenada de mayor a menor es: {numbers_list}")

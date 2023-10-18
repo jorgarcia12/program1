@@ -64,3 +64,31 @@ def merge_sort(num_list):
 
 def book_sort(book):
     return book["publicacion"]
+
+#ejercicio_5
+
+def bubble_sort_reverse(num_list):
+    n = len(num_list)
+    for i in range(n):
+        intercambio = False
+        for j in range(0, n-i-1):
+            if num_list[j] < num_list[j+1]:
+                num_list[j], num_list[j+1] = num_list[j+1], num_list[j]
+                intercambio = True
+        if not intercambio:
+            break
+
+#ejercicio_6
+#ordenamiento por conteo
+def counting_sort(arr):
+    max_value = max(arr)  
+    min_value = min(arr)  
+    range_of_values = max_value - min_value + 1
+    count = [0] * range_of_values
+    for num in arr:
+        count[num - min_value] += 1
+    sorted_arr = []
+    for i in range(range_of_values):
+        for j in range(count[i]):
+            sorted_arr.append(i + min_value)
+    return sorted_arr
