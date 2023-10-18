@@ -113,7 +113,6 @@ for i, cant in appareances.items():
     print(f"{i} : {cant}")
 
 
-
 #8.	Diez equipos de la liga inter-barrial identificados con los números 1, 2, 3, 4, …, 10, participaron en un campeonato de fútbol con modalidad todos contra todos.
 #Los goles anotados en cada encuentro se registraron en el siguiente cuadro:
 #Escriba un programa que:
@@ -122,9 +121,96 @@ for i, cant in appareances.items():
 #o	Muestre la diferencia entre el total de goles marcados y el total de goles recibidos.
 #o	Determine la cantidad de puntos obtenidos por cada equipo.
 
+soccer_matrix = []
+gol_list = []
+for i in range(10):
+    for j in range(10):
+        gol = random.randint(1,4)
+        gol_list.append(gol)
+    soccer_matrix.append(gol_list)
+    gol_list = []
 
+print("Tabla de goles:")
+
+for i in range(10):
+    for j in range(10):
+        if (j == 9):
+            print(soccer_matrix[i][j])
+        else:
+            print(soccer_matrix[i][j], end = " ")
+
+results_list = []
+win_counter = 0
+lose_counter = 0
+tie_counter = 0
+gol_scored = 0
+gol_received = 0
+print("Los triunfos entregan 2 puntos, los empates 1 y las derrotas 0")
+points = 0
+for i in range(10):
+    for j in range(10):
+        if (i != j):
+            gol_scored += soccer_matrix[i][j]
+            gol_received += soccer_matrix[j][i]
+            if (soccer_matrix[i][j] > soccer_matrix[j][i]):
+                points += 2
+                win_counter += 1
+            elif (soccer_matrix[i][j] < soccer_matrix[j][i]):
+                lose_counter += 1
+            else:
+                points += 1
+                tie_counter += 1
+    print(f"El equipo {i + 1} tuvo los siguientes resultados:")
+    print(f"Triunfos: {win_counter}")
+    print(f"Derrotas: {lose_counter}")
+    print(f"Empates: {tie_counter}")
+    print(f"La diferencia entre goles marcados y recibidos fue de {gol_scored - gol_received}")
+    print(f"Los puntos obtenidos por el equipo fueron {points}")
+    gol_scored = 0
+    gol_received = 0
+    points = 0
+    win_counter = 0
+    lose_counter = 0
+    tie_counter = 0
 
 #9.	Escribir un programa que simule el juego clásico de Memoria (Memotest) utilizando matrices. El juego consiste en un tablero de cartas boca abajo y el objetivo es encontrar todas las parejas de cartas iguales.
+
+memotest = [[0,1,2,3,4],[5,6,3,7,4],[8,5,9,10,6],[11,12,8,13,9],[14,15,11,16,13]]
+guess = 0
+win = False
+print("Tendras 15 intentos para adivinar todas las cartas iguales que hay")
+for i in range(15):
+    print("Tablero:")
+    for j in range(5):
+        for h in range(5):
+            if (h == 4):
+                print(memotest[j][h])
+            else:
+                print(memotest[j][h], end = " ")
+    row_guess1 = int(input("Introduzca el numero de fila en donde vio la primera carta: "))
+    column_guess1 = int(input("Introduzca el numero de columna donde vio la primera carta: "))
+    row_guess2 = int(input("Introduzca el numero de fila en donde vio la segunda arta: "))
+    column_guess2 = int(input("Introduzca el numero de columna donde vio la segunda carta: "))
+    if (memotest[row_guess1][column_guess1] == memotest[row_guess2][column_guess2]):
+        guess += 1
+        success = True
+    else:
+        success = False
+    if (success):
+        print("Bien acertaste!")
+    else:
+        print("Que pena, no acertaste")
+    if (guess == 8):
+        win = True
+        print("Muy bien ganaste, felicidades!")
+        break
+    else:
+        print(f"Te quedan {15 - (i + 1)} intentos")
+
+if (win == False):
+    print("Perdiste")
+else:
+    pass
 
 
 #10.	Teniendo una matriz cuadrada de cualquier dimensión, obtener lo siguiente:

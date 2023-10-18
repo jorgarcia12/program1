@@ -14,7 +14,6 @@ import funciones
 #- Dado un país, mostrar cuántos pasajeros viajan a ese país.
 #- Salir del programa.
 
-
 passenger_list = []
 cities_list = []
 
