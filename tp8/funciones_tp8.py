@@ -39,13 +39,14 @@ def odd(n):
         return pair(n - 1)
     
 #ejercicio_5
-def highest_in_list(number_list,highest):
-    highest = 0
-    for i in range(len(number_list)):
-        if number_list[i]< highest:
-            return highest
-        elif number_list[i]>highest:
-            highest = highest_in_list(number_list,highest)
+def highest_in_list(number_list):
+    if len(number_list) == 0:
+        return None
+    highest = number_list[0]
+    for number in number_list:
+        if number > highest:
+            highest = number
+    return highest
 
 #ejercicio_6
 def replicate(num_list, n):

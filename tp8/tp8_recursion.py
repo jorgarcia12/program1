@@ -37,6 +37,8 @@ else:
 
 number_list = [14 , 10, 5, 60, 32, 120]
 highest = funciones_tp8.highest_in_list(number_list)
+print(number_list)
+print(f"El numero mas alto en la lista es: {highest}")
 
 #6.	Escribir una función recursiva para replicar los elementos de una lista una cantidad n de veces. Por ejemplo, replicar ([1, 3, 3, 7], 2) = ([1, 1, 3, 3, 3, 3, 7, 7])
 
