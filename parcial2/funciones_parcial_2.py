@@ -89,5 +89,10 @@ def is_mutant(dna_list):
     if diagonal_count>=1:
             dna_counter += 1
     
-    #Regresamos el contador para poder chequear que seamos mutantes o humanos
-    return dna_counter
+    #Revisamos el contador para poder chequear que seamos mutantes o humanos
+    if dna_counter>1:
+        return True
+    else:
+        return False
+    
+    
