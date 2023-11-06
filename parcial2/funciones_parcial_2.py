@@ -34,9 +34,9 @@ def chain_length(dna_chain):
 def is_mutant(dna_list):
     mutant_sequence = ["AAAA", "CCCC", "GGGG", "TTTT"]
     dna_counter = 0
-    aux = 0
-    appareances = 0
-    #primero chequeamos de manera horizontal
+    
+
+    #FORMA HORIZONTAL
         #Iteramos 4 veces para q compare las 4 secuencias de mutante
         #Iteramos sobre las filas y columnas para encontrar secuencias de ADN mutante
         #Usamos join para que junte la secuencia mutante con la ingresada y compare si hay 4 letras iguales e incrementamos el contador de adn
@@ -47,26 +47,47 @@ def is_mutant(dna_list):
                     dna_counter += 1
     #FORMA VERTICAL
     # Generamos una lista auxiliar para que nos vaya guardando los caracteres y asi poder compararlo con la secuencia mutante
-    # Creamos una variable auxiliar y le damos el valor de i para q pueda comparar los otros caracteres y poder saber si hay 4 iguales en una columna
-    # iteramos por la matriz en busqueda de los 4  caracteres iguales, y si aparecen los 4, los ingresamos en la lista auxiliar
-    # finalmente comparamos las secuencias de adn mutante con las cadenas en vertical_aux, si estas coinciden se incrementa dna_counter
+    # Vamos buscando y comparando los caracteres en las columnas para encontrar 4 iguales, cuando los encontramos los agregamos a la lista vertical_aux para luego poder compararlos con las cadenas en mutant_sequence
+    # Finalmente comparamos las secuencias de adn mutante con las cadenas en vertical_aux, si estas coinciden se incrementa dna_counter
     vertical_aux = []
-    for i in range(5):
-        aux = dna_list[i]
-        char_counter = 1
-        for j in range(6):
-            if dna_list[i][j]==aux:
-                char_counter += 1
-            else:
-                char_counter = 1
-            if char_counter==4:
-                vertical_aux.append(aux*4)
-    print(vertical_aux)
-    print(mutant_sequence)
-    for h in range(4):
-        if mutant_sequence[h] == vertical_aux:
-            dna_counter += 1 
-    #Forma Diagonal
+    for i in range(6):
+        column_aux = "".join([row[i] for row in dna_list])
+        for j in range(len(column_aux) - 3):
+            column_aux_2 = column_aux[j:j+4]
+            if column_aux_2 in mutant_sequence:
+                vertical_aux.append(column_aux_2)
 
+    # Comparamos con mutant_sequence
+    for sequence in vertical_aux:
+        if sequence in mutant_sequence:
+            dna_counter += 1
+    
+
+    #FORMA DIAGONAL
+    
+    #Diagonal principal
+    #Recorremos de forma que nos tome los caracteres en la diagonal principal, luego, comparamos que el siguiente caracter sea igual al anterior hasta llegar a 4 iguales, si se cumple esa condicion, los guardamos en una lista auxiliar y los comparamos con mutant_sequence
+    diagonal_aux = []
+    diagonal_count = 0
+    for i in range(len(dna_list)):
+        for j in range(len(dna_list[0])):
+            #Buscamos las diagonales de izq a derecha hacia abajo y las agregamos a diagonal_aux para poder compararlas con mutant_sequence
+            if i + 3 < len(dna_list) and j + 3 < len(dna_list[0]):
+                diagonal_sequence = "".join([dna_list[i + l][j + l] for l in range(4)])
+                if diagonal_sequence in mutant_sequence:
+                    diagonal_count += 1
+                    diagonal_aux.append(diagonal_sequence)        
+            #En esta seccion analizamos las diagonales de derecha a izquierda hacia abajo y las agregamos a diagonal_aux para poder compararlas con mutant sequence
+    for i in range(len(dna_list)):
+        for j in range(len(dna_list[0])):
+            if i + 3 < len(dna_list) and j - 3 >= 0:
+                diagonal_sequence = "".join([dna_list[i + l][j - l]for l in range(4)])
+                if diagonal_sequence in mutant_sequence:
+                    diagonal_count += 1
+                diagonal_aux.append(diagonal_sequence)    
+    #Si encontramos una cadena de ADN en forma diagonal, aumentamos dna_counter
+    if diagonal_count>=1:
+            dna_counter += 1
+    
     #Regresamos el contador para poder chequear que seamos mutantes o humanos
     return dna_counter
